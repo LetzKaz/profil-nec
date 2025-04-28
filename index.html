@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon Profil en Ligne</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .overlay {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      padding: 24px;
+      transition: bottom 0.4s ease;
+      height: 80%;
+      overflow-y: auto;
+    }
+
+    .overlay.open {
+      bottom: 0;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #ccc;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #007bff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="profileOverlay">
+  <button class="close-btn" onclick="closeOverlay()">×</button>
+
+  <div class="profile-header">
+    <img src="https://via.placeholder.com/100" alt="Photo de profil" class="profile-picture">
+    <div class="profile-name">Ton Nom</div>
+    <div class="social-links">
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">À propos</div>
+    <p>Je suis un développeur passionné par la création de sites web modernes et interactifs. Toujours à l'écoute des nouvelles technologies, je propose des solutions adaptées et innovantes.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projets</div>
+    <ul>
+      <li>Portfolio personnel - 2025</li>
+      <li>Application mobile de gestion - 2024</li>
+      <li>Site e-commerce pour une boutique locale - 2023</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Contact</div>
+    <p>Email : hello@mat4lux.lu</p>
+    <p>Téléphone : +352 661 977 977</p>
+  </div>
+
+</div>
+
+<script>
+  function openOverlay() {
+    document.getElementById('profileOverlay').classList.add('open');
+  }
+
+  function closeOverlay() {
+    document.getElementById('profileOverlay').classList.remove('open');
+  }
+
+  window.addEventListener('load', () => {
+    openOverlay();
+  });
+</script>
+
+</body>
+</html>
